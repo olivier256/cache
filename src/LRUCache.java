@@ -1,9 +1,6 @@
 import java.util.Iterator;
 import java.util.LinkedList;
 
-/**
- * @author Olivier BROSSERON
- */
 public class LRUCache {
 	private final LinkedList<Integer> cache;
 
