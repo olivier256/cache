@@ -12,22 +12,22 @@ public class LRUCache {
 	}
 
 	public void refer(final Integer x) {
-		int index = cache.indexOf(x);
+		int index = cache.indexOf(x);	// O(n)
 		final boolean cacheMiss = index < 0;
 		if (cacheMiss) {
 			if (cache.size() < maxCacheSize) {
 				// Not max size yet. We don't have to remove anything before pushing
-				cache.push(x);
+				cache.push(x);	// O(1)
 			} else {
 				// Already max size. We have to remove the last entry before pushing
 				final int indexOfLastEntry = cache.size() - 1;
-				cache.remove(indexOfLastEntry);
-				cache.push(x);
+				cache.remove(indexOfLastEntry);	// O(1)
+				cache.push(x);	// O(1)
 			}
 		} else {
 			// Cache hit. We move the entry at front
-			cache.remove(index);
-			cache.push(x);
+			cache.remove(index);	// O(1)
+			cache.push(x);	// O(1)
 		}
 	}
 
